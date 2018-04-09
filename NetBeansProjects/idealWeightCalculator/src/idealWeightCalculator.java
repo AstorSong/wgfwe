@@ -126,7 +126,7 @@ public class idealWeightCalculator extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String numberOfName, numberOfMeasure;
-        double numberOfHeight, weight;
+        double numberOfHeight = 0, weight;
         numberOfName = String.valueOf(name.getText());
         numberOfMeasure = (systemOfMeasure.getText());
         System.out.println(numberOfMeasure);
@@ -174,10 +174,8 @@ public class idealWeightCalculator extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new idealWeightCalculator().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new idealWeightCalculator().setVisible(true);
         });
     }
 
