@@ -126,16 +126,23 @@ public class idealWeightCalculator extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String numberOfName, numberOfMeasure;
+        double numberOfHeight, weight;
         numberOfName = String.valueOf(name.getText());
         numberOfMeasure = (systemOfMeasure.getText());
-        @SuppressWarnings("LocalVariableHidesMemberVariable")
-        double numberOfHeight, weight;
-        if (numberOfMeasure == "M")
-        { 
-            numberOfHeight = (height.getText());
+        System.out.println(numberOfMeasure);
+        
+        switch(numberOfMeasure)
+        {
+        case "M": 
             numberOfHeight = Double.parseDouble(height.getText());
             weight = numberOfHeight * numberOfHeight * 25;
+            screen.setText(name +"'s ideal weight is" + weight +"kgs");
+            break;
+        case "I":
             
+            weight = (numberOfHeight*numberOfHeight) * 25 / 703;
+            screen.setText(name + "'s ideal weight is: " + weight+ " lbs. ");
+            break;
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
